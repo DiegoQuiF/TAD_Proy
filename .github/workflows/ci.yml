@@ -32,6 +32,9 @@ jobs:
     - name: Install Flask dependencies
       run: pip install -r Backend/requirements.txt
 
+    - name: Install pytest
+      run: pip install pytest
+
     - name: Run Flask tests
       run: |
         cd Backend
