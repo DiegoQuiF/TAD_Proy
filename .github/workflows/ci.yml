@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js for Angular
       uses: actions/setup-node@v2
       with:
-        node-version: '14'
+        node-version: '18.x'
 
     - name: Install Angular dependencies and build
       run: |
