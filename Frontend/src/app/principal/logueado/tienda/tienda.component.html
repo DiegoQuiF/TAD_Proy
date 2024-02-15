@@ -1,0 +1,143 @@
+<div class="contenido">
+    <div class="titulo">
+        <h2>> Tienda</h2>
+    </div>
+    <div class="subtitulo">
+        <h3>> Libros físicos</h3>
+    </div>
+    <li>
+        <div class="libroFisico">
+            <li class="encabezado">
+                <div class="col-10">
+                    <p>ID</p>
+                </div>
+                <div class="col-20">
+                    <p>Titulo</p>
+                </div>
+                <div class="col-10">
+                    <p>Autor</p>
+                </div>
+                <div class="col-10">
+                    <p>Publicación</p>
+                </div>
+                <div class="col-10">
+                    <p>Idioma</p>
+                </div>
+                <div class="col-10">
+                    <p>Precio</p>
+                </div>
+                <div class="col-10">
+                    <p>Publicante</p>
+                </div>
+                <div class="col-20">
+                    <p>Colección</p>
+                </div>
+            </li>
+
+            <div class="contenido-tabla">
+                <li class="contenido" *ngFor="let materiales of materiales_fisicos" style="margin: 0px; padding: 0px; cursor: pointer;" (click)="abrirOpciones(materiales.idMat)">
+                    <div class="colecciones" style="grid-gap: 24px;">
+                        <div class="col-10">
+                            <p>{{ materiales.idMat }}</p>
+                        </div>
+                        <div class="col-20" style="justify-content: left;">
+                            <p>{{ materiales.tituloMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.autorMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.originalMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.idiomaMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.precioFMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.nombreUsu }} {{ materiales.aPatUsu }} {{ materiales.aMatUsu }}</p>
+                        </div>
+                        <div class="col-20">
+                            <p>{{ materiales.nombreCol }}</p>
+                        </div>
+                    </div>
+                    <div class="comprar oculto" [id]="materiales.idMat">
+                        <form action="">
+                            <button class="botones" type="submit" style="cursor: pointer; background: #27e1a9; width: 150px; margin-top: 0px; margin-bottom: 15px;" (click)="agregarAlCarrito(materiales.idMat)">Agregar al carrito</button>
+                        </form>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </li>
+    <div class="subtitulo">
+        <h3>> Mi carrito</h3>
+    </div>
+    <li>
+        <div class="libroDigital">
+            <li class="encabezado">
+                <div class="col-10">
+                    <p>ID</p>
+                </div>
+                <div class="col-20">
+                    <p>Titulo Material</p>
+                </div>
+                <div class="col-10">
+                    <p>Autor</p>
+                </div>
+                <div class="col-10">
+                    <p>Publicación</p>
+                </div>
+                <div class="col-10">
+                    <p>Idioma</p>
+                </div>
+                <div class="col-10">
+                    <p>Precio</p>
+                </div>
+                <div class="col-10">
+                    <p>Publicante</p>
+                </div>
+                <div class="col-20">
+                    <p>Colección</p>
+                </div>
+            </li>
+
+            <div class="contenido-tabla">
+                <li class="contenido" *ngFor="let materiales of carrito_array" style="margin: 0px; padding: 0px; cursor: pointer;" (click)="abrirOpciones1(materiales.idMat)">
+                    <div class="colecciones" style="grid-gap: 24px;">
+                        <div class="col-10">
+                            <p>{{ materiales.idMat }}</p>
+                        </div>
+                        <div class="col-20" style="justify-content: left;">
+                            <p>{{ materiales.tituloMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.autorMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.originalMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.idiomaMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.precioFMat }}</p>
+                        </div>
+                        <div class="col-10">
+                            <p>{{ materiales.nombreUsu }} {{ materiales.aPatUsu }} {{ materiales.aMatUsu }}</p>
+                        </div>
+                        <div class="col-20">
+                            <p>{{ materiales.nombreCol }}</p>
+                        </div>
+                    </div>
+                    <div class="comprar oculto" [id]="materiales.idMat+'C'">
+                        <form action="">
+                            <button class="botones" type="submit" style="cursor: pointer; background: #27e1a9; width: 110px; margin-top: 0px; margin-bottom: 15px;" (click)="comprarMaterial(materiales.idMat)">Comprar</button>
+                        </form>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </li>
+</div>
